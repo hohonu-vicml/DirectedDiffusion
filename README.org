@@ -1,1 +1,3 @@
 * Directed Diffusion
+
+This is the official code for our Directed Diffusion research.

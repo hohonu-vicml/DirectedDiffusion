@@ -1,0 +1,1 @@
+* Default models path

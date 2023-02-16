@@ -156,7 +156,3 @@ python ./bin/SdEditorCmd.py -p "A red cube above a blue sphere" --seed 3117136
 python ./bin/SdEditorCmd.py -p "A red cube above a blue sphere" --seed 4313672
 python ./bin/SdEditorCmd.py -p "A red cube above a blue sphere" --seed 2551065
 #+end_src
-
-
-
-# challenging
