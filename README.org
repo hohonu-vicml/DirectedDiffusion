@@ -1,3 +1,19 @@
 * Directed Diffusion
 
 This is the official code for our Directed Diffusion research.
+
+* Update
+xx/xx/2023: First release codebase
+
+
+* TODO
+- Upgrade DD to align the latest Diffusers version (current version 0.5.1)
+
+* Cite
+TODO
+
+* Acknolwedgements
+TODO
+
+
+* Results

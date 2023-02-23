@@ -4,26 +4,26 @@ You can reproduce all paper images with the following commands.
 
 * Teaser (Fig.1)
 
-- Our key results
+Our key results. You should be able to reproduce all the exact results.
 
 ** Tiger
 
 #+begin_src bash
   PROMPT="A painting of a tiger, on the wall in the living room"
-  python ./bin/SdEditorCmd.py -roi 0.0,0.4,0.0,0.5 -ei 1,5 -nt 5  -s 1.0 -ns 10 -p "$PROMPT" --seed 6424413 -m
-  python ./bin/SdEditorCmd.py -roi 0.2,0.6,0.0,0.5 -ei 1,5 -nt 5  -s 1.0 -ns 15 -p "$PROMPT" --seed 2094889 -m
-  python ./bin/SdEditorCmd.py -roi 0.4,0.8,0.0,0.5 -ei 1,5 -nt 20 -s 2.5 -ns 10 -p "$PROMPT" --seed 2932378 -m
-  python ./bin/SdEditorCmd.py -roi 0.6,1.0,0.0,0.5 -ei 1,5 -nt 20 -s 2.5 -ns 10 -p "$PROMPT" --seed 3570630 -m
+  python ./bin/DDCmd.py -roi 0.0,0.4,0.0,0.5 -ei 1,5 -nt 5  -s 1.0 -ns 10 -p "$PROMPT" --seed 6424413 -m
+  python ./bin/DDCmd.py -roi 0.2,0.6,0.0,0.5 -ei 1,5 -nt 5  -s 1.0 -ns 15 -p "$PROMPT" --seed 2094889 -m
+  python ./bin/DDCmd.py -roi 0.4,0.8,0.0,0.5 -ei 1,5 -nt 20 -s 2.5 -ns 10 -p "$PROMPT" --seed 2932378 -m
+  python ./bin/DDCmd.py -roi 0.6,1.0,0.0,0.5 -ei 1,5 -nt 20 -s 2.5 -ns 10 -p "$PROMPT" --seed 3570630 -m
 #+end_src
 
 ** One constrain Car
 
 #+begin_src bash
   PROMPT="A yellow Aston martin DB5 car on a bridge"
-  python ./bin/SdEditorCmd.py -roi 0.5,1.0,0.0,0.5 -ei 1,5 -nt 30 -s 2.0 -ns 10 -p "$PROMPT" --seed 2483964026821236
-  python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.0,0.5 -ei 1,5 -nt 20 -s 1.5 -ns 15 -p "$PROMPT" --seed 1383323
-  python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.5,1.0 -ei 1,5 -nt 30 -s 2.0 -ns 10 -p "$PROMPT" --seed 2483964026821236
-  python ./bin/SdEditorCmd.py -roi 0.5,1.0,0.5,1.0 -ei 1,2 -nt 20 -s 2.5 -ns 10 -p "$PROMPT" --seed 2483964026821236
+  python ./bin/DDCmd.py -roi 0.5,1.0,0.0,0.5 -ei 1,5 -nt 30 -s 2.0 -ns 10 -p "$PROMPT" --seed 2483964026821236
+  python ./bin/DDCmd.py -roi 0.0,0.5,0.0,0.5 -ei 1,5 -nt 20 -s 1.5 -ns 15 -p "$PROMPT" --seed 1383323
+  python ./bin/DDCmd.py -roi 0.0,0.5,0.5,1.0 -ei 1,5 -nt 30 -s 2.0 -ns 10 -p "$PROMPT" --seed 2483964026821236
+  python ./bin/DDCmd.py -roi 0.5,1.0,0.5,1.0 -ei 1,2 -nt 20 -s 2.5 -ns 10 -p "$PROMPT" --seed 2483964026821236
 #+end_src
 
 ** Two constrains
@@ -31,9 +31,9 @@ You can reproduce all paper images with the following commands.
 #+begin_src bash
   # Two regions
   PROMPT="A red cube on top of a blue sphere"
-  python ./bin/SdEditorCmd.py -roi 0.4,0.7,0.1,0.5 0.4,0.7,0.5,0.9 -ei 2,3 8,9 -nt 10,10 -s 2.5,2.5 -ns 20 -p "$PROMPT" --seed 2483964026830 -m
+  python ./bin/DDCmd.py -roi 0.4,0.7,0.1,0.5 0.4,0.7,0.5,0.9 -ei 2,3 8,9 -nt 10,10 -s 2.5,2.5 -ns 20 -p "$PROMPT" --seed 2483964026830 -m
   PROMPT="A dog sitting next to a mirror"
-  python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.0,1.0 0.5,1.0,0.0,1.0 -ei 1,2 6,7 -nt 20,20 -s 1.0,1.0 -ns 5 -p "$PROMPT" --seed 24839640268232521 -m
+  python ./bin/DDCmd.py -roi 0.0,0.5,0.0,1.0 0.5,1.0,0.0,1.0 -ei 1,2 6,7 -nt 20,20 -s 1.0,1.0 -ns 5 -p "$PROMPT" --seed 24839640268232521 -m
 #+end_src
 
 ** Retired
@@ -41,18 +41,18 @@ You can reproduce all paper images with the following commands.
 #+begin_src bash
   # Retired
   PROMPT="A painting of a squirrel eating a burger"
-  python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.5,1.0 -ei 7,8 -nt 20 -s 1.0 -ns 5 -p "$PROMPT"
-  python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.0,0.5 -ei 7,8 -nt 20 -s 1.0 -ns 5 -p "$PROMPT"
-  python ./bin/SdEditorCmd.py -roi 0.5,1.0,0.5,1.0 -ei 7,8 -nt 5 -s 2.0 -ns 15 -p "$PROMPT"
-  python ./bin/SdEditorCmd.py -roi 0.5,1.0,0.5,1.0 -ei 7,8 -nt 10 -s 1.0 -ns 5 -p "$PROMPT"
+  python ./bin/DDCmd.py -roi 0.0,0.5,0.5,1.0 -ei 7,8 -nt 20 -s 1.0 -ns 5 -p "$PROMPT"
+  python ./bin/DDCmd.py -roi 0.0,0.5,0.0,0.5 -ei 7,8 -nt 20 -s 1.0 -ns 5 -p "$PROMPT"
+  python ./bin/DDCmd.py -roi 0.5,1.0,0.5,1.0 -ei 7,8 -nt 5 -s 2.0 -ns 15 -p "$PROMPT"
+  python ./bin/DDCmd.py -roi 0.5,1.0,0.5,1.0 -ei 7,8 -nt 10 -s 1.0 -ns 5 -p "$PROMPT"
 
   # Retired
   PROMPT="A car on a bridge"
-  python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.0,0.5 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "A car on a bridge"
-  python ./bin/SdEditorCmd.py -roi 0.5,1.0,0.5,1.0 -ei 1,2 -nt 20 -s 2.5 -ns 10 -p "A car on a bridge"
-  python ./bin/SdEditorCmd.py -roi 0.5,1.0,0.5,1.0 -ei 1,2 -nt 20 -s 2.5 -ns 10 -p "A car on a bridge"
-  python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.5,1.0 -ei 1,2 -nt 30 -s 2.0 -ns 10 -p "A car on a bridge"
-  python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.5,1.0 -ei 1,2 -nt 5 -s 2.0 -ns 0 -p "A car on a bridge"
+  python ./bin/DDCmd.py -roi 0.0,0.5,0.0,0.5 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "A car on a bridge"
+  python ./bin/DDCmd.py -roi 0.5,1.0,0.5,1.0 -ei 1,2 -nt 20 -s 2.5 -ns 10 -p "A car on a bridge"
+  python ./bin/DDCmd.py -roi 0.5,1.0,0.5,1.0 -ei 1,2 -nt 20 -s 2.5 -ns 10 -p "A car on a bridge"
+  python ./bin/DDCmd.py -roi 0.0,0.5,0.5,1.0 -ei 1,2 -nt 30 -s 2.0 -ns 10 -p "A car on a bridge"
+  python ./bin/DDCmd.py -roi 0.0,0.5,0.5,1.0 -ei 1,2 -nt 5 -s 2.0 -ns 0 -p "A car on a bridge"
 #+end_src
 
 * Trialing attention (Fig6)
@@ -62,11 +62,11 @@ You can reproduce all paper images with the following commands.
 
 #+begin_src bash
   PROMPT="A painting of a squirrel eating a burger"
-  python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.5,1.0 -ei 7,8 -nt 0 5 10 15 20 -s 2.0 -ns 1 -p "$PROMPT" $DEBUG
-  python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.5,1.0 -ei 7,8 -nt 0 5 10 15 20 -s 2.0 -ns 3 -p "$PROMPT" $DEBUG
-  python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.5,1.0 -ei 7,8 -nt 0 5 10 15 20 -s 2.0 -ns 5 -p "$PROMPT" $DEBUG
-  python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.5,1.0 -ei 7,8 -nt 0 5 10 15 20 -s 2.0 -ns 10 -p "$PROMPT" $DEBUG
-  python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.5,1.0 -ei 7,8 -nt 0 5 10 15 20 -s 2.0 -ns 15 -p "$PROMPT" $DEBUG
+  python ./bin/DDCmd.py -roi 0.0,0.5,0.5,1.0 -ei 7,8 -nt 0 5 10 15 20 -s 2.0 -ns 1 -p "$PROMPT" $DEBUG
+  python ./bin/DDCmd.py -roi 0.0,0.5,0.5,1.0 -ei 7,8 -nt 0 5 10 15 20 -s 2.0 -ns 3 -p "$PROMPT" $DEBUG
+  python ./bin/DDCmd.py -roi 0.0,0.5,0.5,1.0 -ei 7,8 -nt 0 5 10 15 20 -s 2.0 -ns 5 -p "$PROMPT" $DEBUG
+  python ./bin/DDCmd.py -roi 0.0,0.5,0.5,1.0 -ei 7,8 -nt 0 5 10 15 20 -s 2.0 -ns 10 -p "$PROMPT" $DEBUG
+  python ./bin/DDCmd.py -roi 0.0,0.5,0.5,1.0 -ei 7,8 -nt 0 5 10 15 20 -s 2.0 -ns 15 -p "$PROMPT" $DEBUG
 #+end_src
 
 * Main experiments Sliding window (Fig7)
@@ -74,85 +74,97 @@ You can reproduce all paper images with the following commands.
 #+begin_src bash
 # sliding
 PROMPT="A cat sitting on a car"
-python ./bin/SdEditorCmd.py -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.0,0.4,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 20 -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.1,0.5,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.2,0.6,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.3,0.7,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.4,0.8,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.5,0.9,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.6,1.0,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.0,0.4,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 20 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.1,0.5,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.2,0.6,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.3,0.7,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.4,0.8,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.5,0.9,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.6,1.0,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "$PROMPT" --seed 2483964026826
 
 # sliding
 PROMPT="A dog hiding behind the chair"
-python ./bin/SdEditorCmd.py -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.0,0.4,0.0,1.0 -ei 1,2 -nt 10 -s 2.5 -ns 20 -p "A dog hiding behind the chair" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.1,0.5,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 5 -p "A dog hiding behind the chair" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.2,0.6,0.0,1.0 -ei 1,2 -nt 20 -s 1.0 -ns 5 -p "A dog hiding behind the chair" --seed 248396402123
-python ./bin/SdEditorCmd.py -roi 0.3,0.7,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 5 -p "A dog hiding behind the chair" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.4,0.8,0.0,1.0 -ei 1,2 -nt 20 -s 1.0 -ns 10 -p "A dog hiding behind the chair" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.5,0.9,0.0,1.0 -ei 1,2 -nt 10 -s 2.5 -ns 5 -p "A dog hiding behind the chair" --seed 248396402123
-python ./bin/SdEditorCmd.py -roi 0.6,1.0,0.0,1.0 -ei 1,2 -nt 10 -s 2.5 -ns 10 -p "A dog hiding behind the chair" --seed 24839640213415
+python ./bin/DDCmd.py -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.0,0.4,0.0,1.0 -ei 1,2 -nt 10 -s 2.5 -ns 20 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.1,0.5,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 5  -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.2,0.6,0.0,1.0 -ei 1,2 -nt 20 -s 1.0 -ns 5  -p "$PROMPT" --seed 248396402123
+python ./bin/DDCmd.py -roi 0.3,0.7,0.0,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 5  -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.4,0.8,0.0,1.0 -ei 1,2 -nt 20 -s 1.0 -ns 10 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.5,0.9,0.0,1.0 -ei 1,2 -nt 10 -s 2.5 -ns 5  -p "$PROMPT" --seed 248396402123
+python ./bin/DDCmd.py -roi 0.6,1.0,0.0,1.0 -ei 1,2 -nt 10 -s 1.0 -ns 5  -p "$PROMPT" --seed 24839640279
 
 
 PROMPT="A stone castle surrounded by lakes and trees"
-python ./bin/SdEditorCmd.py -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.0,0.4,0.0,1.0 -ei 1,2,3 -nt 10 -s 1.0 -ns 10 -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.1,0.5,0.0,1.0 -ei 1,2,3 -nt 10 -s 1.0 -ns 10 -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.2,0.6,0.0,1.0 -ei 1,2,3 -nt 10 -s 1.0 -ns 5 -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.3,0.7,0.0,1.0 -ei 1,2,3 -nt 10 -s 1.0 -ns 20 -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.4,0.8,0.0,1.0 -ei 1,2,3 -nt 10 -s 2.5 -ns 20 -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.5,0.9,0.0,1.0 -ei 1,2,3 -nt 10 -s 2.5 -ns 10 -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.6,1.0,0.0,1.0 -ei 1,2,3 -nt 10 -s 1.0 -ns 10 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.0,0.4,0.0,1.0 -ei 1,2,3 -nt 10 -s 1.0 -ns 10 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.1,0.5,0.0,1.0 -ei 1,2,3 -nt 10 -s 1.0 -ns 10 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.2,0.6,0.0,1.0 -ei 1,2,3 -nt 10 -s 1.0 -ns 5 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.3,0.7,0.0,1.0 -ei 1,2,3 -nt 10 -s 1.0 -ns 20 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.4,0.8,0.0,1.0 -ei 1,2,3 -nt 10 -s 2.5 -ns 20 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.5,0.9,0.0,1.0 -ei 1,2,3 -nt 10 -s 2.5 -ns 10 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.6,1.0,0.0,1.0 -ei 1,2,3 -nt 10 -s 1.0 -ns 10 -p "$PROMPT" --seed 2483964026826
 #+end_src
 
 * Main experiments Four quadrants (Fig8)
 
+
+** Sun
 #+begin_src bash
 # four quadrants
 PROMPT="The sun shining on a house"
-python ./bin/SdEditorCmd.py -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.0,0.5 -ei 1,2 -nt 30 -s 1.0 -ns 20 -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.5,1.0 -ei 1,2 -nt 10 -s 2.5 -ns 10 -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.5,1.0,0.5,1.0 -ei 1,2 -nt 10 -s 1.0 -ns 5 -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.5,1.0,0.0,0.5 -ei 1,2 -nt 10 -s 2.5 -ns 10 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.0,0.5,0.0,0.5 -ei 1,2 -nt 30 -s 1.0 -ns 20 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.0,0.5,0.5,1.0 -ei 1,2 -nt 10 -s 2.5 -ns 10 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.5,1.0,0.5,1.0 -ei 1,2 -nt 10 -s 1.0 -ns 5  -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.5,1.0,0.0,0.5 -ei 1,2 -nt 20 -s 2.5 -ns 20 -p "$PROMPT" --seed 2483964026826
+#+end_src
 
+** Dog
+#+begin_src bash
 PROMPT="a dog diving into a pool in sunny day"
-python ./bin/SdEditorCmd.py -p  "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.0,0.5 -ei 1,2 -nt 30 -s 1.0 -ns 0 -p  "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.5,1.0 -ei 1,2 -nt 10 -s 2.5 -ns 10 -p "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.5,1.0,0.5,1.0 -ei 1,2 -nt 10 -s 1.0 -ns 10 -p "$PROMPT" --seed 2483964026826 -l2
-python ./bin/SdEditorCmd.py -roi 0.5,1.0,0.0,0.5 -ei 1,2 -nt 10 -s 2.5 -ns 10 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -p  "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.0,0.5,0.0,0.5 -ei 1,2 -nt 10 -s 5.0 -ns 20 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.0,0.5,0.5,1.0 -ei 1,2 -nt 10 -s 5.0 -ns 20 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.5,1.0,0.5,1.0 -ei 1,2 -nt 10 -s 2.5 -ns 20 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.5,1.0,0.0,0.5 -ei 1,2 -nt 10 -s 2.5 -ns 10 -p "$PROMPT" --seed 2483964026826
+#+end_src
 
+** Diver
+#+begin_src bash
 PROMPT="a diver swimming through a school of fish"
-python ./bin/SdEditorCmd.py -p  "$PROMPT" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.0,0.5 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "a diver swimming through a school of fish" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.0,0.5,0.5,1.0 -ei 1,2 -nt 20 -s 5.0 -ns 10 -p "a diver swimming through a school of fish" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.5,1.0,0.5,1.0 -ei 1,2 -nt 10 -s 2.5 -ns 20 -p "a diver swimming through a school of fish" --seed 2483964026826
-python ./bin/SdEditorCmd.py -roi 0.5,1.0,0.0,0.5 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -p  "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.0,0.5,0.0,0.5 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.0,0.5,0.5,1.0 -ei 1,2 -nt 20 -s 5.0 -ns 10 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.5,1.0,0.5,1.0 -ei 1,2 -nt 10 -s 2.5 -ns 20 -p "$PROMPT" --seed 2483964026826
+python ./bin/DDCmd.py -roi 0.5,1.0,0.0,0.5 -ei 1,2 -nt 10 -s 5.0 -ns 10 -p "$PROMPT" --seed 2483964026826
+#+end_src
 
-
-
-python ./bin/SdEditorCmd.py -roi 0.4,0.7,0.0,0.5 0.4,0.7,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 10 -p "A red cube above a blue sphere" --seed 2483964026821236
-python ./bin/SdEditorCmd.py -roi 0.4,0.7,0.0,0.5 0.4,0.7,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "A red cube above a blue sphere" --seed 1213698
-python ./bin/SdEditorCmd.py -roi 0.4,0.7,0.0,0.5 0.4,0.7,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "A red cube above a blue sphere" --seed 5940489
-python ./bin/SdEditorCmd.py -roi 0.4,0.7,0.0,0.5 0.4,0.7,0.5,1.0 -ei 2,3 6,7 -nt 20,20 -s 1.0,1.0 -ns 10 -p "A red cube above a blue sphere" --seed 2970109
-python ./bin/SdEditorCmd.py -roi 0.3,0.8,0.0,0.5 0.3,0.8,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "A red cube above a blue sphere" --seed 2390759
-python ./bin/SdEditorCmd.py -roi 0.3,0.8,0.0,0.5 0.3,0.8,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "A red cube above a blue sphere" --seed 4147864
-python ./bin/SdEditorCmd.py -roi 0.3,0.8,0.0,0.5 0.3,0.8,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "A red cube above a blue sphere" --seed 3117136
-python ./bin/SdEditorCmd.py -roi 0.3,0.8,0.0,0.5 0.3,0.8,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "A red cube above a blue sphere" --seed 4313672
-python ./bin/SdEditorCmd.py -roi 0.3,0.8,0.0,0.5 0.3,0.8,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "A red cube above a blue sphere" --seed 2551065
+** Cube/Sphere
+#+begin_src bash
+PROMPT="A red cube above a blue sphere"
+python ./bin/DDCmd.py -roi 0.4,0.7,0.0,0.5 0.4,0.7,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 10 -p "$PROMPT" --seed 2483964026821236
+python ./bin/DDCmd.py -roi 0.4,0.7,0.0,0.5 0.4,0.7,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "$PROMPT" --seed 1213698
+python ./bin/DDCmd.py -roi 0.4,0.7,0.0,0.5 0.4,0.7,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "$PROMPT" --seed 5940489
+python ./bin/DDCmd.py -roi 0.4,0.7,0.0,0.5 0.4,0.7,0.5,1.0 -ei 2,3 6,7 -nt 20,20 -s 1.0,1.0 -ns 10 -p "$PROMPT" --seed 2970109
+python ./bin/DDCmd.py -roi 0.3,0.8,0.0,0.5 0.3,0.8,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "$PROMPT" --seed 2390759
+python ./bin/DDCmd.py -roi 0.3,0.8,0.0,0.5 0.3,0.8,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "$PROMPT" --seed 4147864
+python ./bin/DDCmd.py -roi 0.3,0.8,0.0,0.5 0.3,0.8,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "$PROMPT" --seed 3117136
+python ./bin/DDCmd.py -roi 0.3,0.8,0.0,0.5 0.3,0.8,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "$PROMPT" --seed 4313672
+python ./bin/DDCmd.py -roi 0.3,0.8,0.0,0.5 0.3,0.8,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "$PROMPT" --seed 2551065
 #+end_src
 
 * Cube/Sphere (Fig9)
+
 #+begin_src bash
-python ./bin/SdEditorCmd.py -p "A red cube above a blue sphere" --seed 2483964026821236
-python ./bin/SdEditorCmd.py -p "A red cube above a blue sphere" --seed 1213698
-python ./bin/SdEditorCmd.py -p "A red cube above a blue sphere" --seed 5940489
-python ./bin/SdEditorCmd.py -p "A red cube above a blue sphere" --seed 2970109
-python ./bin/SdEditorCmd.py -p "A red cube above a blue sphere" --seed 2390759
-python ./bin/SdEditorCmd.py -p "A red cube above a blue sphere" --seed 4147864
-python ./bin/SdEditorCmd.py -p "A red cube above a blue sphere" --seed 3117136
-python ./bin/SdEditorCmd.py -p "A red cube above a blue sphere" --seed 4313672
-python ./bin/SdEditorCmd.py -p "A red cube above a blue sphere" --seed 2551065
+PROMPT="A red cube above a blue sphere"
+python ./bin/DDCmd.py -roi 0.4,0.7,0.0,0.5 0.4,0.7,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 10 -p "$PROMPT" --seed 2483964026821236
+python ./bin/DDCmd.py -roi 0.4,0.7,0.0,0.5 0.4,0.7,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "$PROMPT" --seed 1213698
+python ./bin/DDCmd.py -roi 0.4,0.7,0.0,0.5 0.4,0.7,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "$PROMPT" --seed 5940489
+python ./bin/DDCmd.py -roi 0.4,0.7,0.0,0.5 0.4,0.7,0.5,1.0 -ei 2,3 6,7 -nt 20,20 -s 1.0,1.0 -ns 10 -p "$PROMPT" --seed 2970109
+python ./bin/DDCmd.py -roi 0.3,0.8,0.0,0.5 0.3,0.8,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "$PROMPT" --seed 2390759
+python ./bin/DDCmd.py -roi 0.3,0.8,0.0,0.5 0.3,0.8,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "$PROMPT" --seed 4147864
+python ./bin/DDCmd.py -roi 0.3,0.8,0.0,0.5 0.3,0.8,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "$PROMPT" --seed 3117136
+python ./bin/DDCmd.py -roi 0.3,0.8,0.0,0.5 0.3,0.8,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "$PROMPT" --seed 4313672
+python ./bin/DDCmd.py -roi 0.3,0.8,0.0,0.5 0.3,0.8,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 20 -p "$PROMPT" --seed 2551065
 #+end_src
