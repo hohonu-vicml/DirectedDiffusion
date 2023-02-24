@@ -1,0 +1,145 @@
+* Walk through
+
+This is the quick walkthrough for the DirectedDiffusion.
+
+* Setup
+
+** Repo
+
+- Pull the repo and go to the root directory. E.g.,
+   #+begin_quote bash
+   git clone git@gitlab.com:gladiator8072/conditioned-diffusion.git && cd conditioned-diffusion
+   #+end_quote
+
+- Make sure you expose the graphics card in the shell. E.g.,
+   #+begin_quote bash
+   export CUDA_VISIBLE_DEVICES="0,1"
+   #+end_quote
+
+- We use diffusers version 0.5.1 in our implementation. E.g.,
+   #+begin_quote bash
+   pip install diffusers==0.5.1
+   #+end_quote
+
+- Install diffusion/clip model
+
+  The default paths of the models in the executable program are
+  - CLIP: ``assets/models/clip-vit-large-patch14''
+  - Diffusion: ``assets/models/stable-diffusion-v1-4''
+
+  You could either follow the guide to install the models through
+  *scripts/install-model.sh* as described in the repo README. Or install them
+  randomly, However, you need then to give the model path to the flag *-dp* and
+  *-cp*. E.g.,
+  #+begin_quote bash
+  -dp /path/to/diffusion -cp /path/to/clip
+  #+end_quote
+
+- Try to run the DDCmd command help to see if you get the help description.
+  If so then it means all core modules and libraries are imported correctly.
+  #+begin_quote bash
+  python ./bin/DDCmd.py --help
+  #+end_quote
+
+* DD Command
+
+Here is the command for all the essential materials to run DirectedDiffusion
+
+** Arguments
+
+*** description
+
+#+begin_src bash :results output
+  python ./bin/DDCmd.py \
+         -roi   0.0,0.5,0.0,1.0  # fraction tuple
+         -ei    1,2              # associated prompt indices
+         -nt    20               # number of trailing attention
+         -s     1.0              # noise level
+         -ns    5                # number of Attention Editing steps
+         -ds    50               # number of diffusion steps (default: 50)
+         -m                      # image annotation (optional, useful for debugging)
+         -p   "A tiger sitting a on car"         # prompt
+         -n   "Your note"                        # your note
+         -dp  "/path/to/diffusion/model/folder"  # default: assets/models/clip-vit-large-patch14
+         -cp  "/path/to/clip/model/folder"       # default: assets/models/stable-diffusion-v1-4
+         -f   "/your/output/folder"              # experiment output folder
+#+end_src
+
+*** paper notation
+
+#+begin_src bash :results output
+  python ./bin/DDCmd.py \
+         -roi   0.0,0.5,0.0,1.0 # \mathbf{r} = {r_left, r_right, r_top, r_bottom}
+         -ei    1,2             # \mathcal{I}
+         -nt    20              # will be turned into E.g., \mathcal{T} = {|P|+1,...,|P|+T}
+         -s     1.0             # c_g
+         -ns    5               # N
+         -ds    50              # T
+#+end_src
+
+**  Region(s)
+
+The parameters of the associated regions are the region of the interests (-roi,
+\mathcal{B}), prompt edited indices (-ei, \mathcal{I}), and the number trailing
+attentions (-nt). Note that the trailing attention indices \mathcal{T} is
+converted from the user input -nt via \mathcal{T} = {|P|+1,...,|P|+T}. The
+length of the sets must be the same.
+
+Note that more regions may break the image synthesis as we pointed in our
+limitation section. In our experience, one, and two regions are the
+recommendations.
+
+E.g., The prompt: A dog sitting on the chair
+
+*** single region
+
+If it is single region
+#+begin_src bash :results output
+  -roi   0.0,0.5,0.0,1.0 # left part of the image
+  -ei    1,2             # representing "A" "dog"
+  -nt    5               # 5 trailings thus \mathcal{T} = \{7,8,9,10,11\}
+  -s     1.0             # gaussian amplifying
+#+end_src
+
+#+begin_src bash :results output
+python ./bin/DDCmd.py -roi 0.5,1.0,0.0,0.5 -ei 1,2,3 -nt 10 -s 2.0 -ns 15 -p "A yellow car on a bridge" -m
+#+end_src
+
+#+attr_html: :width 25%
+#+attr_latex: :width 0.25\textwidth
+[[file:../assets/images/230224-143501_id000_A-yellow-car-on-a-bridge.jpg]]
+
+*** two regions
+
+If it is multiple regions
+#+begin_src bash :results output
+  -roi   0.0,0.5,0.0,1.0 0.5,1.0,0.0,1.0 # left and right part of the image
+  -ei    1,2 5,6         # representing the indices of "A" "dog" region, and "the" "chair"
+  -nt    5 5             # 5 trailings thus \mathcal{T} = \{7,8,9,10,11\}
+  -s     1.0 1.0         # gaussian amplifying
+#+end_src
+
+#+begin_src bash :results output
+python ./bin/DDCmd.py -roi 0.4,0.7,0.0,0.5 0.4,0.7,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 10 -p "A red cube above a blue sphere" --seed 2483964026821236 -m
+#+end_src
+
+#+attr_html: :width 25%
+#+attr_latex: :width 0.25\textwidth
+[[file:../assets/images/230224-151034_id000_A-red-cube-above-a-blue-sphere.jpg]]
+
+** Grid search
+
+We provide the grid search on parameters -nt, -s, -ns to boost the user
+experience. DDCmd.py will run all the combination of those specified list of
+parameters.
+
+E.g., the following command will generate all combination of -nt 5 10 20 -ns 5
+10 -s 2.5, and thus 6 experiments will be saved in a timestamped folder.
+#+begin_quote bash
+python ./bin/SdEditorCmd.py -roi 0.5,1.0,0.0,0.5 -ei 1,2,3 -nt 5 10 20 -ns 5 10 -s 2.5 -p "A yellow car running on a bridge" -m
+#+end_quote
+
+We also provide a lazy way to grid search with built-in parameter list by specifying -l1, or -l2 flag
+#+begin_quote bash
+python ./bin/SdEditorCmd.py -roi 0.5,1.0,0.0,0.5 -ei 1,2,3 -p "A yellow car running on a bridge" -m -l2
+#+end_quote
