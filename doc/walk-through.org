@@ -105,8 +105,9 @@ If it is single region
 python ./bin/DDCmd.py -roi 0.5,1.0,0.0,0.5 -ei 1,2,3 -nt 10 -s 2.0 -ns 15 -p "A yellow car on a bridge" -m
 #+end_src
 
-#+attr_html: :width 25%
-#+attr_latex: :width 0.25\textwidth
+#+attr_html: :width 100px
+#+attr_latex: :width 100px
+#+attr_org: :width 100px
 [[file:../assets/images/230224-143501_id000_A-yellow-car-on-a-bridge.jpg]]
 
 *** two regions
