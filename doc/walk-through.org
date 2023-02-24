@@ -109,9 +109,9 @@ python ./bin/DDCmd.py -roi 0.5,1.0,0.0,0.5 -ei 1,2,3 -nt 10 -s 2.0 -ns 15 -p "A 
 #+attr_latex: :width 0.25\textwidth
 [[file:../assets/images/230224-143501_id000_A-yellow-car-on-a-bridge.jpg]]
 
-#+BEGIN_EXPORT html
-<center><img src="../assets/images/230224-143501_id000_A-yellow-car-on-a-bridge.jpg" width="25%" height="25%" /></center>
-#+END_EXPORT
+
+#+html: <center><img src="../assets/images/230224-143501_id000_A-yellow-car-on-a-bridge.jpg" width="25%" height="25%" /></center>
+
 
 *** two regions
 
