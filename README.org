@@ -26,15 +26,15 @@ TODO
 - Prompt: A cat sitting on a car
 - Prompt: A stone castle surrounded by lakes and trees
 - Prompt: A dog hiding behind the chair
-#+html: <center><img src="assets/images/exp-sliding.png" width="25%" height="25%" /></center>
+#+html: <center><img src="assets/images/exp-sliding.png"/></center>
 
 ** Condition: sun, dog, diver
 - Prompt: The sun shines on the house
 - Prompt: A dog diving into the pool
 - Prompt: A diver swimming through a school of fish
-#+html: <center><img src="assets/images/exp-four-q.png" width="25%" height="25%" /></center>
+#+html: <center><img src="assets/images/exp-four-q.png"/></center>
 
 ** Condition: cube/sphere
 - Prompt: A red cube above a blue sphere
 (Note that each column sharing the same random seed)
-#+html: <center><img src="assets/images/exp-cube-sphere-box.png" width="25%" height="25%" /></center>
+#+html: <center><img src="assets/images/exp-cube-sphere-box.png"/></center>
