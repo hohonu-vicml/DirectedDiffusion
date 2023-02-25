@@ -1,5 +1,7 @@
 * Directed Diffusion
-This is the official code for our Directed Diffusion research.
+This is the official code for our Directed Diffusion research. Please visit our
+project page ([[https://hohonu-vicml.github.io/DirectedDiffusion.Page/][DD.Page]]) for a quick introduction, or our paper for more
+information in detail (TODO:Arxiv Link)
 
 * Usage
 Please refer to our [[file:doc/walk-through.org][walk-through.org]] for more information from scratch. Once you
@@ -10,7 +12,6 @@ that are not listed in our paper for fun [[file:doc/other-prompt.org][other-prom
 * Update
 xx/xx/2023: First release codebase
 
-
 * TODO
 - Upgrade DD to align the latest Diffusers version (current version 0.5.1)
 
@@ -18,7 +19,8 @@ xx/xx/2023: First release codebase
 TODO
 
 * Acknolwedgements
-TODO
+We thank Jason Baldridge, Avisek Lahiri, and Arkanath Pathak for helpful
+feedback.
 
 * Results
 
