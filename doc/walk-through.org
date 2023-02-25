@@ -104,14 +104,7 @@ If it is single region
 #+begin_src bash :results output
 python ./bin/DDCmd.py -roi 0.5,1.0,0.0,0.5 -ei 1,2,3 -nt 10 -s 2.0 -ns 15 -p "A yellow car on a bridge" -m
 #+end_src
-
-#+attr_html: :width 25%
-#+attr_latex: :width 0.25\textwidth
-[[file:../assets/images/230224-143501_id000_A-yellow-car-on-a-bridge.jpg]]
-
-
 #+html: <center><img src="../assets/images/230224-143501_id000_A-yellow-car-on-a-bridge.jpg" width="25%" height="25%" /></center>
-
 
 *** two regions
 
@@ -126,10 +119,8 @@ If it is multiple regions
 #+begin_src bash :results output
 python ./bin/DDCmd.py -roi 0.4,0.7,0.0,0.5 0.4,0.7,0.5,1.0 -ei 2,3 6,7 -nt 10,10 -s 1.0,1.0 -ns 10 -p "A red cube above a blue sphere" --seed 2483964026821236 -m
 #+end_src
+#+html: <center><img src="../assets/images/230224-151034_id000_A-red-cube-above-a-blue-sphere.jpg" width="25%" height="25%" /></center>
 
-#+attr_html: :width 25%
-#+attr_latex: :width 0.25\textwidth
-[[file:../assets/images/230224-151034_id000_A-red-cube-above-a-blue-sphere.jpg]]
 
 ** Grid search
 

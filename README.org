@@ -1,6 +1,11 @@
 * Directed Diffusion
-
 This is the official code for our Directed Diffusion research.
+
+* Usage
+Please refer to our [[file:doc/walk-through.org][walk-through.org]] for more information from scratch. Once you
+get familiar with it, then you could reproduce our paper result and alter some
+of the parameter in [[file:doc/paper-result.org][paper-result.org]]. We also provide some of the experiments
+that are not listed in our paper for fun [[file:doc/other-prompt.org][other-prompt.org]]!
 
 * Update
 xx/xx/2023: First release codebase
@@ -15,5 +20,21 @@ TODO
 * Acknolwedgements
 TODO
 
-
 * Results
+
+** Condition: cat, stone castle, dog
+- Prompt: A cat sitting on a car
+- Prompt: A stone castle surrounded by lakes and trees
+- Prompt: A dog hiding behind the chair
+#+html: <center><img src="../assets/images/exp-sliding.png" width="25%" height="25%" /></center>
+
+** Condition: sun, dog, diver
+- Prompt: The sun shines on the house
+- Prompt: A dog diving into the pool
+- Prompt: A diver swimming through a school of fish
+#+html: <center><img src="../assets/images/exp-four-q.png" width="25%" height="25%" /></center>
+
+** Condition: cube/sphere
+- Prompt: A red cube above a blue sphere
+(Note that each column sharing the same random seed)
+#+html: <center><img src="../assets/images/exp-cube-sphere-box.png" width="25%" height="25%" /></center>
