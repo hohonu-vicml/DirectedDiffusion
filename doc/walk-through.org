@@ -138,3 +138,9 @@ We also provide a lazy way to grid search with built-in parameter list by specif
 #+begin_quote bash
 python ./bin/SdEditorCmd.py -roi 0.5,1.0,0.0,0.5 -ei 1,2,3 -p "A yellow car running on a bridge" -m -l2
 #+end_quote
+
+
+* DD Main
+
+We also make a simple script to run our program in the file [[file:../bin/DDCmdMain.py][bin/DDCmdMain.py]] so
+one can easily edit our code with different purposes.

@@ -15,7 +15,7 @@ model_bundle = DirectedDiffusion.AttnEditorUtils.load_all_models(
     model_path_clip = 'assets/models/clip-vit-large-patch14',
     model_path_diffusion = 'assets/models/stable-diffusion-v1-4'
 )
-
+quit()
 prompt = "A cat sitting on a car"
 attn_editor_bundle = {
     'edit_index':[[1,2]],
