@@ -6,6 +6,7 @@ from PIL import Image
 from transformers import CLIPModel, CLIPTextModel, CLIPTokenizer, CLIPProcessor
 from diffusers import AutoencoderKL, UNet2DConditionModel
 
+
 def get_embeds(prompt, clip, clip_tokenizer, device="cuda"):
     tokens = clip_tokenizer(
         prompt,
@@ -47,15 +48,17 @@ def get_latent_from_image(vae, image, device="cuda"):
 
 
 def load_all_models(model_path_clip, model_path_diffusion):
-    # Init CLIP tokenizer and model
-    #model_path_clip = "assets/models/clip-vit-large-patch14"
-    clip_tokenizer = CLIPTokenizer.from_pretrained(model_path_clip)
-    clip_model = CLIPModel.from_pretrained(model_path_clip, torch_dtype=torch.float16)
-    clip = clip_model.text_model
-    clip_processor = CLIPProcessor.from_pretrained(model_path_clip)
+
+    clip_tokenizer = CLIPTokenizer.from_pretrained(
+        model_path_diffusion, subfolder="tokenizer"
+    )
+    clip_text_model = CLIPTextModel.from_pretrained(
+        model_path_diffusion, subfolder="text_encoder", torch_dtype=torch.float16
+    )
+
     # Init diffusion model
     auth_token = True  # Replace this with huggingface auth token as a string if model is not already downloaded
-    #model_path_diffusion = "assets/models/stable-diffusion-v1-4"
+    # model_path_diffusion = "assets/models/stable-diffusion-v1-4"
     unet = UNet2DConditionModel.from_pretrained(
         model_path_diffusion,
         subfolder="unet",
@@ -74,13 +77,12 @@ def load_all_models(model_path_clip, model_path_diffusion):
     device = "cuda"
     unet.to(device)
     vae.to(device)
-    clip_model.to(device)
+    clip_text_model.to(device)
     model_bundle = {}
     model_bundle["unet"] = unet
     model_bundle["vae"] = vae
-    model_bundle["clip_model"] = clip_model
     model_bundle["clip_tokenizer"] = clip_tokenizer
-    model_bundle["clip_processor"] = clip_processor
+    model_bundle["clip_text_model"] = clip_text_model
     return model_bundle
 
 
@@ -120,7 +122,7 @@ def get_attn(unet, use=True):
     f = torchvision.transforms.Resize(size=(64, 64))
     for i in range(77):
         dim = int(np.sqrt(attn.shape[0]))
-        attn_slice = attn[...,i].view(1,dim,dim)
+        attn_slice = attn[..., i].view(1, dim, dim)
         resized[..., i] = f(attn_slice)[0]
     return resized.cpu().numpy()
 
@@ -133,6 +135,7 @@ def save_attn(unet):
             filepath = os.path.join(folder, name + ".pt")
             torch.save(module.attn, filepath)
             print(filepath)
+
 
 def use_add_noise(unet, level, use=True):
     for name, module in unet.named_modules():
@@ -147,7 +150,6 @@ def use_edited_attention(unet, use=True):
         module_name = type(module).__name__
         if module_name == "CrossAttention":
             module.use_edited_attn = use
-
 
 
 def prompt_token(prompt, index):

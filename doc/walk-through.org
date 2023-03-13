@@ -18,7 +18,7 @@ This is the quick walkthrough for the DirectedDiffusion.
 
 - We use diffusers version 0.5.1 in our implementation. E.g.,
    #+begin_quote bash
-   pip install diffusers==0.5.1
+   pip3 install diffusers==0.5.1
    #+end_quote
 
 - Install diffusion/clip model

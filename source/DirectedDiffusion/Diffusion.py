@@ -34,10 +34,8 @@ def stablediffusion(
     # neural networks
     unet = model_bundle["unet"]
     vae = model_bundle["vae"]
-    clip_model = model_bundle["clip_model"]
     clip_tokenizer = model_bundle["clip_tokenizer"]
-    clip_processor = model_bundle["clip_processor"]
-    clip = clip_model.text_model
+    clip = model_bundle["clip_text_model"]
     # attn editor bundle, our stuff
     num_affected_steps = int(attn_editor_bundle.get("num_affected_steps") or 0)
     if not num_affected_steps:
