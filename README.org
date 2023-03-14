@@ -1,7 +1,7 @@
 * Directed Diffusion
 This is the official code for our Directed Diffusion research. Please visit our
 project page ([[https://hohonu-vicml.github.io/DirectedDiffusion.Page/][DD.Page]]) for a quick introduction, or our paper for more
-information in detail (TODO:Arxiv Link)
+information in detail ([[https://arxiv.org/abs/2302.13153][link]])
 
 * Usage
 Please refer to our [[file:doc/walk-through.org][walk-through.org]] for more information from scratch. Once you
