@@ -11,12 +11,12 @@ that are not listed in our paper for fun [[file:doc/other-prompt.org][other-prom
 
 
 * Update
-xx/May/2023: TODO: We will release our second version of DD to make results more robust
-xx/Apr/2023: TODO: We will update DD with latest diffusers version (v0.14.0) Currently we use diffusers v0.5.1
-01/Mar/2023: First release codebase
+| xx/May/2023: TODO: We will release our second version of DD to make results more robust
+| xx/Apr/2023: TODO: We will update DD with latest diffusers version (v0.14.0) Currently we use diffusers v0.5.1
+| 01/Mar/2023: First release codebase
 
 * Cite
-#+begin_quote
+#+begin_src quote
 @misc{ma2023directed,
     title={Directed Diffusion: Direct Control of Object Placement through Attention Guidance},
     author={Wan-Duo Kurt Ma and J. P. Lewis and W. Bastiaan Kleijn and Thomas Leung},
@@ -25,7 +25,7 @@ xx/Apr/2023: TODO: We will update DD with latest diffusers version (v0.14.0) Cur
     archivePrefix={arXiv},
     primaryClass={cs.CV}
 }
-#+end_quote
+#+end_src
 
 * Acknolwedgements
 We thank Jason Baldridge, Avisek Lahiri, and Arkanath Pathak for helpful
