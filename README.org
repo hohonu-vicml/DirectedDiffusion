@@ -9,14 +9,23 @@ get familiar with it, then you could reproduce our paper result and alter some
 of the parameter in [[file:doc/paper-result.org][paper-result.org]]. We also provide some of the experiments
 that are not listed in our paper for fun [[file:doc/other-prompt.org][other-prompt.org]]!
 
-* Update
-xx/xx/2023: First release codebase
 
-* TODO
-- Upgrade DD to align the latest Diffusers version (current version 0.5.1)
+* Update
+xx/May/2023: TODO: We will release our second version of DD to make results more robust
+xx/Apr/2023: TODO: We will update DD with latest diffusers version (v0.14.0) Currently we use diffusers v0.5.1
+01/Mar/2023: First release codebase
 
 * Cite
-TODO
+#+begin_quote
+@misc{ma2023directed,
+    title={Directed Diffusion: Direct Control of Object Placement through Attention Guidance},
+    author={Wan-Duo Kurt Ma and J. P. Lewis and W. Bastiaan Kleijn and Thomas Leung},
+    year={2023},
+    eprint={2302.13153},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
+#+end_quote
 
 * Acknolwedgements
 We thank Jason Baldridge, Avisek Lahiri, and Arkanath Pathak for helpful
