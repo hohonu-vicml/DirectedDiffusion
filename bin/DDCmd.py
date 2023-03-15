@@ -47,7 +47,7 @@ def is_repo_dirty():
 
 
 def get_args():
-    """ args parsing
+    """args parsing
     Args:
     Returns:
     """
@@ -81,7 +81,11 @@ def get_args():
         help="random seed. If seed value S is less than 1000 (S<1000), then we generate S seeds for you to run the DD",
     )
     parser.add_argument(
-        "-p", "--prompt", type=str, default="", help="stable diffusion prompt",
+        "-p",
+        "--prompt",
+        type=str,
+        default="",
+        help="stable diffusion prompt",
     )
     # the attributes for stable diffusion editor
     parser.add_argument(
@@ -193,7 +197,11 @@ def get_args():
         ),
     )
     parser.add_argument(
-        "-n", "--note", type=str, default="your note", help="customized user note",
+        "-n",
+        "--note",
+        type=str,
+        default="your note",
+        help="customized user note",
     )
     parser.add_argument(
         "-cp",
@@ -214,7 +222,7 @@ def get_args():
 
 
 def main():
-    """ The entry point to execute this program
+    """The entry point to execute this program
     Args:
     Returns:
     """
@@ -250,7 +258,7 @@ def main():
 
     # seed
     if args.seed <= 1000:
-        seeds = (np.random.sample(args.seed)*10000000).astype(np.int32)
+        seeds = (np.random.sample(args.seed) * 10000000).astype(np.int32)
     else:
         seeds = [args.seed]
 
@@ -286,7 +294,7 @@ def main():
             len(args.noise_scale),
             len(args.num_affected_steps),
             len(args.diffusion_steps),
-            len(seeds)
+            len(seeds),
         )
         print(code)
         folder = os.path.join(
@@ -300,12 +308,9 @@ def main():
     if not args.debug:
         print("Loading model....")
         model_bundle = DirectedDiffusion.AttnEditorUtils.load_all_models(
-            args.clip_model_path, args.diffusion_model_path
+            args.diffusion_model_path
         )
         print("Loaded all models")
-
-
-
 
     for i, element in enumerate(param_list):
 

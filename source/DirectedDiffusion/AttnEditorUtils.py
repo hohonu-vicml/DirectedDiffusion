@@ -47,7 +47,7 @@ def get_latent_from_image(vae, image, device="cuda"):
     return init_latent
 
 
-def load_all_models(model_path_clip, model_path_diffusion):
+def load_all_models(model_path_diffusion):
 
     clip_tokenizer = CLIPTokenizer.from_pretrained(
         model_path_diffusion, subfolder="tokenizer"

@@ -12,17 +12,15 @@ importlib.reload(DirectedDiffusion)
 from PIL import Image, ImageFont, ImageDraw
 
 model_bundle = DirectedDiffusion.AttnEditorUtils.load_all_models(
-    model_path_clip = 'assets/models/clip-vit-large-patch14',
     model_path_diffusion = 'assets/models/stable-diffusion-v1-4'
 )
-quit()
 prompt = "A cat sitting on a car"
 attn_editor_bundle = {
     'edit_index':[[1,2]],
     'roi':[(0.0, .5, 0., 1.)],
-    'num_trailing_attn':[5],
-    'num_affected_steps':0,
-    'noise_scale':[.5],
+    'num_trailing_attn':[10],
+    'num_affected_steps':10,
+    'noise_scale':[1.0],
 }
 img = DirectedDiffusion.Diffusion.stablediffusion(
         model_bundle,
@@ -31,8 +29,8 @@ img = DirectedDiffusion.Diffusion.stablediffusion(
         prompt=prompt,
         steps=50,
         seed=248396402730,
-        is_save_attn=True,
-        is_save_recons=True,
+        is_save_attn=False,
+        is_save_recons=False,
     )
 img.show()
 
