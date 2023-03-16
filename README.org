@@ -11,7 +11,7 @@ that are not listed in our paper for fun [[file:doc/other-prompt.org][other-prom
 
 
 * Update
-| 16/Mar/2023: Gradio Web UI integrated! See doc/walk-through.org for more info.
+| 16/Mar/2023: Gradio Web UI integrated! See [[file:doc/walk-through.org][walk-through.org]] for more info.
 | 01/Mar/2023: First release codebase
 
 * Todo

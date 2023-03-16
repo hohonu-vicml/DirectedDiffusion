@@ -152,4 +152,6 @@ DD has ported in the Gradio UI for your better experience. Mostly the arguments 
 
 Note that the grid search is based on all the combinition of the slider parameters: DDSteps = [5, 10], GaussianCoef=[1.0, 1.5, 2.5], and Trailings = [10, 20, 30, 40]. Thus there are 24 experiments in each run and it will take a bit time to finish all of them. (Please leave any suggestion on this feature. Thank You!)
 
+To run the Gradio app, please do ``python bin/DDGradio.py'' on the terminal.
+
 #+html: <center><img src="../assets/images/gradio.png" width="75%" height="75%" /></center>
