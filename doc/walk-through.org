@@ -144,3 +144,12 @@ python ./bin/SdEditorCmd.py -roi 0.5,1.0,0.0,0.5 -ei 1,2,3 -p "A yellow car runn
 
 We also make a simple script to run our program in the file [[file:../bin/DDCmdMain.py][bin/DDCmdMain.py]] so
 one can easily edit our code with different purposes.
+
+
+* DD Gradio
+
+DD has ported in the Gradio UI for your better experience. Mostly the arguments of sliders, textfields are migrated from the commands DDCmd.py on the Web App. The gallery output is useful if you want to compare things when doing grid search.
+
+Note that the grid search is based on all the combinition of the slider parameters: DDSteps = [5, 10], GaussianCoef=[1.0, 1.5, 2.5], and Trailings = [10, 20, 30, 40]. Thus there are 24 experiments in each run and it will take a bit time to finish all of them. (Please leave any suggestion on this feature. Thank You!)
+
+#+html: <center><img src="../assets/images/gradio.png" width="75%" height="75%" /></center>

@@ -11,9 +11,12 @@ that are not listed in our paper for fun [[file:doc/other-prompt.org][other-prom
 
 
 * Update
-| xx/May/2023: TODO: We will release our second version of DD to make results more robust
-| xx/Apr/2023: TODO: We will update DD with latest diffusers version (v0.14.0) Currently we use diffusers v0.5.1
+| 16/Mar/2023: Gradio Web UI integrated! See doc/walk-through.org for more info.
 | 01/Mar/2023: First release codebase
+
+* Todo
+| xx/May/2023: TODO: We will release our second version of DD to make our results more robust.
+| xx/Apr/2023: TODO: We will update DD with latest diffusers version (v0.14.0) Currently we use diffusers v0.5.1
 
 * Cite
 #+begin_src quote
