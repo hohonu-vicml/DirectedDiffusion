@@ -55,6 +55,8 @@ model_bundle = DirectedDiffusion.AttnEditorUtils.load_all_models(
     model_path_diffusion="assets/models/stable-diffusion-v1-4"
 )
 
+ALL_OUTPUT = []
+
 
 def directed_diffusion(
     in_prompt,
@@ -110,7 +112,7 @@ def run_it(
     is_grid_search,
     progress=gr.Progress(),
 ):
-
+    global ALL_OUTPUT
     num_affected_steps = [in_slider_ddsteps]
     noise_scale = [in_slider_gcoef]
     num_trailing_attn = [in_slider_trailings]
@@ -152,7 +154,14 @@ def run_it(
                 ),
             )
         )
-    return results
+    ALL_OUTPUT += results
+    return ALL_OUTPUT
+
+def clean_gallery():
+    global ALL_OUTPUT
+    ALL_OUTPUT = []
+    return ALL_OUTPUT
+
 
 
 with gr.Blocks() as demo:
@@ -207,7 +216,9 @@ with gr.Blocks() as demo:
                 in_slider_gcoef = gr.Slider(
                     minimum=0, maximum=10, value=1.0, step=0.1, label="GaussianCoef"
                 )
-            btn = gr.Button("Generate image").style(full_width=False)
+            with gr.Row(variant="compact"):
+                btn_run = gr.Button("Generate image").style(full_width=True)
+                btn_clean = gr.Button("Clean Gallery").style(full_width=True)
 
             gr.Markdown(
                 """ Note:
@@ -231,7 +242,8 @@ with gr.Blocks() as demo:
             is_draw_bbox,
             is_grid_search,
         ]
-        btn.click(run_it, inputs=args, outputs=gallery)
+        btn_run.click(run_it, inputs=args, outputs=gallery)
+        btn_clean.click(clean_gallery, outputs=gallery)
     examples = gr.Examples(
         examples=EXAMPLES,
         inputs=args,
