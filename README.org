@@ -3,6 +3,8 @@ This is the official code for our Directed Diffusion research. Please visit our
 project page ([[https://hohonu-vicml.github.io/DirectedDiffusion.Page/][DD.Page]]) for a quick introduction, or our paper for more
 information in detail ([[https://arxiv.org/abs/2302.13153][link]])
 
+NOTE: This repository is associated with our ArXiv version v1 ([[https://arxiv.org/abs/2302.13153v1][link]]). We will sync our work here in the near future with online demos.
+
 * Usage
 Please refer to our [[file:doc/walk-through.org][walk-through.org]] for more information from scratch. Once you
 get familiar with it, then you could reproduce our paper result and alter some
@@ -11,18 +13,20 @@ that are not listed in our paper for fun [[file:doc/other-prompt.org][other-prom
 
 
 * Update
+| 28/Sep/2023: We have updated the latest version of our ArXiv paper. More validations, more ablations, with enhanced methodologies.
 | 16/Mar/2023: Gradio Web UI integrated! See [[file:doc/walk-through.org][walk-through.org]] for more info.
 | 01/Mar/2023: First release codebase
 
 * Todo
-| xx/May/2023: TODO: We will release our second version of DD to make our results more robust.
-| xx/Apr/2023: TODO: We will update DD with latest diffusers version (v0.14.0) Currently we use diffusers v0.5.1
+| 28/Sep/2023: TODO: The latest v3 ArXiv work will be updated here.
+| 01/May/2023: DONE: We will release our second version of DD to make our results more robust.
+| 01/Apr/2023: TODO: We will update DD with latest diffusers version (v0.14.0) Currently we use diffusers v0.5.1
 
 * Cite
 #+begin_src quote
 @misc{ma2023directed,
     title={Directed Diffusion: Direct Control of Object Placement through Attention Guidance},
-    author={Wan-Duo Kurt Ma and J. P. Lewis and W. Bastiaan Kleijn and Thomas Leung},
+    author={Wan-Duo Kurt Ma and J. P. Lewis and W. Bastiaan Kleijn and Avisek Lahiri and Thomas Leung},
     year={2023},
     eprint={2302.13153},
     archivePrefix={arXiv},
