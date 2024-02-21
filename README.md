@@ -3,8 +3,8 @@
 
 [![Paper](https://img.shields.io/badge/cs.CV-Paper-b31b1b?logo=arxiv&logoColor=red)](https://arxiv.org/abs/2302.13153)
 [![Project Page](https://img.shields.io/badge/TrailBlazer-Website-green?logo=googlechrome&logoColor=green)](https://hohonu-vicml.github.io/DirectedDiffusion.Page/)
-[![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Demo-blue)](https://github.com/hohonu-vicml/DirectedDiffusion?tab=readme-ov-file#TODO)
-[![Video](https://img.shields.io/badge/YouTube-Project-c4302b?logo=youtube&logoColor=red)](https://github.com/hohonu-vicml/DirectedDiffusion?tab=readme-ov-file#TODO)
+[![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Demo-blue)](https://github.com/hohonu-vicml/DirectedDiffusion?tab=readme-ov-file#fire-todo)
+[![Video](https://img.shields.io/badge/YouTube-Project-c4302b?logo=youtube&logoColor=red)](https://github.com/hohonu-vicml/DirectedDiffusion?tab=readme-ov-file#fire-todo)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fhohonu-vicml%2FDirectedDiffusion&count_bg=%23EA00FF&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 This repository contains the implementation of the following paper:
