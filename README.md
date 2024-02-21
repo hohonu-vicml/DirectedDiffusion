@@ -9,8 +9,9 @@
 
 This repository contains the implementation of the following paper:
 > **Directed Diffusion: Direct Control of Object Placement through Attention Guidance**<br>
-> [Wan-Duo Kurt Ma](https://www.linkedin.com/in/kurt-ma/)<sup>1</sup>,[Avisek Lahiri](https://scholar.google.co.in/citations?user=4zgNd2UAAAAJ&hl=en)<sup>1</sup>, [J.P. Lewis](http://www.scribblethink.org/)<sup>3</sup>,[Thomas Leung](https://scholar.google.ca/citations?user=sUK_w2QAAAAJ&hl=en)<sup>1</sup>, [ W. Bastiaan Kleijn](https://people.wgtn.ac.nz/bastiaan.kleijn)<sup>1</sup>,<br>
+> [Wan-Duo Kurt Ma](https://www.linkedin.com/in/kurt-ma/)<sup>1</sup>,[Avisek Lahiri](https://scholar.google.co.in/citations?user=4zgNd2UAAAAJ&hl=en)<sup>1</sup>, [J.P. Lewis](http://www.scribblethink.org/)<sup>3*</sup>,[Thomas Leung](https://scholar.google.ca/citations?user=sUK_w2QAAAAJ&hl=en)<sup>1</sup>, [ W. Bastiaan Kleijn](https://people.wgtn.ac.nz/bastiaan.kleijn)<sup>1</sup>,<br>
 Victoria University of Wellington<sup>1</sup>, Google Research<sup>2</sup>, NVIDIA Research<sup>3</sup>
+\* work done at Google Research
 
 ## :fire: Overview
 ![teaser](./assets/images/teaser.png)
