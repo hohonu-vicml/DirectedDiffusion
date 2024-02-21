@@ -13,7 +13,7 @@ This repository contains the implementation of the following paper:
 Victoria University of Wellington<sup>1</sup>, Google Research<sup>2</sup>, NVIDIA Research<sup>3</sup>
 
 ## :fire: Overview
-![teaser](./assets/figs/teaser.gif)
+![teaser](./assets/images/teaser.png)
 
 Text-guided diffusion models such as DALLE-2, Imagen, eDiff-I, and Stable Diffusion are able to generate an effectively endless variety of images given only a short text prompt describing the desired image content. In many cases the images are of very high quality. However, these models often struggle to compose scenes containing several key objects such as characters in specified positional relationships. The missing capability to *direct* the placement of characters and objects both within and across images is crucial in storytelling, as recognized in the literature on film and animation theory. In this work, we take a particularly straightforward approach to providing the needed direction. Drawing on the observation that the cross-attention maps for prompt words reflect the spatial layout of objects denoted by those words, we introduce an optimization objective that produces ``activation'' at desired positions in these cross-attention maps. The resulting approach is a step toward generalizing the applicability of text-guided diffusion models beyond single images to collections of related images, as in storybooks. *Directed Diffusion* provides easy high-level positional control over multiple objects, while making use of an existing pre-trained model and maintaining a coherent blend between the positioned objects and the background. Moreover, it requires only a few lines to implement.
 
@@ -39,8 +39,7 @@ We also provide some of the experiments that are not listed in our paper for fun
 
 ## :fire: Acknolwedgements
 
-We thank Jason Baldridge, Avisek Lahiri, and Arkanath Pathak for helpful
-feedback.
+We thank Jason Baldridge, and Arkanath Pathak for helpful feedback.
 
 ## :fire: TODO
 
@@ -57,7 +56,16 @@ HuggingFace demo.
  generation. If you find our work useful for your research, please consider
  citing our paper.
 
-   ```bibtex
+```bibtex
+    @article{ma2023directed,
+       title={Directed Diffusion: Direct Control of Object Placement through Attention Guidance},
+           author={Wan-Duo Kurt Ma and J. P. Lewis and Avisek Lahiri and Thomas Leung and W. Bastiaan Kleijn},
+       year={2023},
+       eprint={2302.13153},
+       archivePrefix={arXiv},
+       primaryClass={cs.CV}
+   }
+
    @article{ma2023trailblazer,
        title={TrailBlazer: Trajectory Control for Diffusion-Based Video Generation},
        author={Wan-Duo Kurt Ma and J. P. Lewis and W. Bastiaan Kleijn},
@@ -66,13 +74,4 @@ HuggingFace demo.
        archivePrefix={arXiv},
        primaryClass={cs.CV}
    }
-
-   @article{ma2023directed,
-       title={Directed Diffusion: Direct Control of Object Placement through Attention Guidance},
-       author={Wan-Duo Kurt Ma and J. P. Lewis and Avisek Lahiri and Thomas Leung and W. Bastiaan Kleijn},
-       year={2023},
-       eprint={2302.13153},
-       archivePrefix={arXiv},
-       primaryClass={cs.CV}
-   }
-   ```
+```
