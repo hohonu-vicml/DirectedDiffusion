@@ -47,9 +47,8 @@ We thank Jason Baldridge, and Arkanath Pathak for helpful feedback.
 
 We apologize this repository is not fully udpated and stays at our v1 ArXiv
 version [link](https://arxiv.org/abs/2302.13153v1). We are actively working on
-enhancing our codebase, which is currently at the first ArXiv version. The
-updates are scheduled for release in March 2024, along with an online
-HuggingFace demo.
+enhancing our codebase. The updates are scheduled for release in March 2024, 
+along with an online HuggingFace demo.
 
 ## :fire: Citation
 
